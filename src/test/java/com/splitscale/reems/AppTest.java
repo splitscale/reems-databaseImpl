@@ -43,39 +43,46 @@ public class AppTest {
     Map<String, Object> data = new HashMap<>();
     data.put("firstname", "Steven");
     data.put("lastname", "Ballaret");
-    docRef.set(data);
+    data.put("age", 20);
+    data.put("gwapo", true);
 
-    System.out.println("Added document with ID: " + docRef.getId());
+    // return type is future, you should wait for it to finish before moving on
+    // see for reference: https://firebase.google.com/docs/firestore/manage-data/add-data#set_a_document
+    ApiFuture<WriteResult> future = docRef.set(data);
+
+    System.out.println("Added document with ID: " + future.get().getUpdateTime());
   }
 
   // @Test
   // public void read() throws Exception {
-  //   // DocumentReference docRef = db.collection("cities").document("SF");
-   
-  //   ApiFuture<DocumentSnapshot> future = docRef.get();
+  // // DocumentReference docRef = db.collection("cities").document("SF");
 
-  //   DocumentSnapshot document = future.get();
-  //   if (document.exists()) {
-  //     System.out.println("Document data: " + document.getData());
-  //   } else {
-  //     System.out.println("No such document!");
-  //   }
+  // ApiFuture<DocumentSnapshot> future = docRef.get();
+
+  // DocumentSnapshot document = future.get();
+  // if (document.exists()) {
+  // System.out.println("Document data: " + document.getData());
+  // } else {
+  // System.out.println("No such document!");
+  // }
   // }
 
   // @Test
   // public void update() throws Exception {
-  //   // DocumentReference docRef = db.collection("users").document("eIfF8Kc9Gyh5pWbd4keX");
+  // // DocumentReference docRef =
+  // db.collection("users").document("eIfF8Kc9Gyh5pWbd4keX");
 
-  //   ApiFuture<WriteResult> future = docRef.update("Jerome", true);
-    
-  //   WriteResult result = future.get();
-  //   System.out.println("Write result: " + result);
+  // ApiFuture<WriteResult> future = docRef.update("Jerome", true);
+
+  // WriteResult result = future.get();
+  // System.out.println("Write result: " + result);
   // }
 
   // @Test
   // public void delete() throws Exception {
-  //   ApiFuture<WriteResult> writeResult = db.collection("cities").document("DC").delete();
+  // ApiFuture<WriteResult> writeResult =
+  // db.collection("cities").document("DC").delete();
 
-  //   System.out.println("Update time : " + writeResult.get().getUpdateTime());
+  // System.out.println("Update time : " + writeResult.get().getUpdateTime());
   // }
 }
