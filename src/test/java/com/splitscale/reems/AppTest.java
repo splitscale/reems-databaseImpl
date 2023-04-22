@@ -4,14 +4,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.FirestoreOptions;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -39,50 +37,46 @@ public class AppTest {
   }
 
   @Test
-  public void add() throws Exception {
+  public void userFlow() throws Exception {
+    create();
+    read();
+    update();
+    read();
+    delete();
+  }
+
+  public void create() throws Exception {
     Map<String, Object> data = new HashMap<>();
-    data.put("firstname", "Steven");
+    data.put("firstname", "Steve");
     data.put("lastname", "Ballaret");
     data.put("age", 20);
     data.put("gwapo", true);
 
-    // return type is future, you should wait for it to finish before moving on
-    // see for reference: https://firebase.google.com/docs/firestore/manage-data/add-data#set_a_document
     ApiFuture<WriteResult> future = docRef.set(data);
-
-    System.out.println("Added document with ID: " + future.get().getUpdateTime());
+    System.out.println("Added a document: " + future.get().getUpdateTime());
   }
 
-  // @Test
-  // public void read() throws Exception {
-  // // DocumentReference docRef = db.collection("cities").document("SF");
+  public void read() throws Exception {
 
-  // ApiFuture<DocumentSnapshot> future = docRef.get();
+    ApiFuture<DocumentSnapshot> future = docRef.get();
 
-  // DocumentSnapshot document = future.get();
-  // if (document.exists()) {
-  // System.out.println("Document data: " + document.getData());
-  // } else {
-  // System.out.println("No such document!");
-  // }
-  // }
+    DocumentSnapshot document = future.get();
+    if (document.exists()) {
+      System.out.println("Document data: " + document.getData());
+    } else {
+      System.out.println("No such document!");
+    }
+  }
 
-  // @Test
-  // public void update() throws Exception {
-  // // DocumentReference docRef =
-  // db.collection("users").document("eIfF8Kc9Gyh5pWbd4keX");
+  public void update() throws Exception {
 
-  // ApiFuture<WriteResult> future = docRef.update("Jerome", true);
+    ApiFuture<WriteResult> future = docRef.update("firstname", "Jiv");
+    System.out.println("Updated data:" + future.get().getUpdateTime());
+  }
 
-  // WriteResult result = future.get();
-  // System.out.println("Write result: " + result);
-  // }
+  public void delete() throws Exception {
 
-  // @Test
-  // public void delete() throws Exception {
-  // ApiFuture<WriteResult> writeResult =
-  // db.collection("cities").document("DC").delete();
-
-  // System.out.println("Update time : " + writeResult.get().getUpdateTime());
-  // }
+    ApiFuture<WriteResult> writeResult = docRef.delete();
+    System.out.println("Document deleted : " + writeResult.get().getUpdateTime());
+  }
 }
