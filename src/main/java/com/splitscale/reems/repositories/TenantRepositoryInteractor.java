@@ -22,7 +22,7 @@ public class TenantRepositoryInteractor implements TenantRepository {
   }
 
   public String add(TenantInfoRequest tenantInfoRequest) throws IOException {
-    String query = "INSERT INTO tenant_info (tenant_name, created, edited) VALUES (?, ?, ?);";
+    String query = "INSERT INTO TenantInfo (tenant_name, created, edited) VALUES (?, ?, ?);";
 
     try {
       Connection conn = db.getConnection();
@@ -48,7 +48,7 @@ public class TenantRepositoryInteractor implements TenantRepository {
   }
 
   public void delete(String id) throws IOException {
-    String query = "DELETE FROM tenant_info WHERE id = ?;";
+    String query = "DELETE FROM TenantInfo WHERE id = ?;";
 
     try {
       Connection conn = db.getConnection();
@@ -64,7 +64,7 @@ public class TenantRepositoryInteractor implements TenantRepository {
   public List<TenantInfo> getAll() throws IOException {
     List<TenantInfo> tenantInfoList = new ArrayList<>();
 
-    String query = "SELECT id, tenant_name, created, edited FROM tenant_info;";
+    String query = "SELECT id, tenant_name, created, edited FROM TenantInfo;";
 
     try {
       Connection conn = db.getConnection();
@@ -91,7 +91,7 @@ public class TenantRepositoryInteractor implements TenantRepository {
   }
 
   public TenantInfo getById(String id) throws IOException {
-    String query = "SELECT id, tenant_name, created, edited FROM tenant_info WHERE id = ?;";
+    String query = "SELECT id, tenant_name, created, edited FROM TenantInfo WHERE id = ?;";
 
     try {
       Connection conn = db.getConnection();
@@ -118,7 +118,7 @@ public class TenantRepositoryInteractor implements TenantRepository {
   }
 
   public void update(TenantInfo tenantInfo) throws IOException {
-    String query = "UPDATE tenant_info SET tenant_name = ?, created = ?, edited = ? WHERE id = ?;";
+    String query = "UPDATE TenantInfo SET tenant_name = ?, created = ?, edited = ? WHERE id = ?;";
 
     try {
       Connection conn = db.getConnection();

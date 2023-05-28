@@ -1,0 +1,5 @@
+com\splitscale\reems\repositories\TenantRepositoryInteractor.class
+com\splitscale\reems\repositories\PropertyRepositoryInteractor.class
+com\splitscale\reems\driver\DatabaseDriver.class
+com\splitscale\reems\repositories\EnvironmentalHazardRepositoryInteractor.class
+com\splitscale\reems\repositories\MitigationRepositoryInteractor.class
