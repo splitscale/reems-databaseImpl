@@ -1,8 +1,8 @@
 package com.splitscale.reems;
 
 import com.splitscale.reems.driver.DatabaseDriver;
-import com.splitscale.reems.energy.consumption.EnergyConsumption;
-import com.splitscale.reems.energy.consumption.EnergyConsumptionRequest;
+import com.splitscale.reems.core.energy.consumption.EnergyConsumption;
+import com.splitscale.reems.core.energy.consumption.EnergyConsumptionRequest;
 import com.splitscale.reems.repositories.EnergyConsumptionRepositoryInteractor;
 
 import org.junit.jupiter.api.BeforeEach;

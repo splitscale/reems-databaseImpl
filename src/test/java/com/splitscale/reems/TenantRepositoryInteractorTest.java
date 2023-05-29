@@ -1,7 +1,7 @@
 package com.splitscale.reems;
 
-import com.splitscale.reems.tenantinfo.TenantInfo;
-import com.splitscale.reems.tenantinfo.TenantInfoRequest;
+import com.splitscale.reems.core.tenantinfo.TenantInfo;
+import com.splitscale.reems.core.tenantinfo.TenantInfoRequest;
 import com.splitscale.reems.driver.DatabaseDriver;
 import com.splitscale.reems.repositories.TenantRepositoryInteractor;
 

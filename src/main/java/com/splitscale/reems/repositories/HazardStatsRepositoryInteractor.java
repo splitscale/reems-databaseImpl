@@ -1,8 +1,9 @@
 package com.splitscale.reems.repositories;
 
 import com.splitscale.reems.driver.DatabaseDriver;
-import com.splitscale.reems.hazardStats.HazardStats;
-import com.splitscale.reems.hazardStats.HazardStatsRequest;
+import com.splitscale.reems.core.hazardStats.HazardStats;
+import com.splitscale.reems.core.hazardStats.HazardStatsRequest;
+import com.splitscale.reems.core.repositories.HazardStatsRepository;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -106,6 +107,7 @@ public class HazardStatsRepositoryInteractor implements HazardStatsRepository {
 
   public HazardStats getById(String id) throws IOException {
     String query = "SELECT id, created, edited, total_hazards, change_this_month FROM HazardStats WHERE id = ?;";
+    HazardStats hazardStats;
 
     try {
       Connection conn = db.getConnection();
@@ -119,17 +121,16 @@ public class HazardStatsRepositoryInteractor implements HazardStatsRepository {
         long totalHazards = rs.getLong("total_hazards");
         long changeThisMonth = rs.getLong("change_this_month");
 
-        HazardStats hazardStats = new HazardStats(id, created, edited, totalHazards, changeThisMonth);
-        conn.close();
-        return hazardStats;
-      } else {
-        conn.close();
-        return null;
+        hazardStats = new HazardStats(id, created, edited, totalHazards, changeThisMonth);
       }
+
+      conn.close();
     } catch (SQLException e) {
       throw new IOException(
           "Could not retrieve hazard stats from the database due to a server error: " + e.getMessage());
     }
+
+    return hazardStats;
   }
 
   public void update(HazardStats hazardStats) throws IOException {

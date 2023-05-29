@@ -1,8 +1,9 @@
 package com.splitscale.reems.repositories;
 
 import com.splitscale.reems.driver.DatabaseDriver;
-import com.splitscale.reems.hazard.environment.EnvironmentalHazard;
-import com.splitscale.reems.hazard.environment.EnvironmentalHazardRequest;
+import com.splitscale.reems.core.hazard.environment.EnvironmentalHazard;
+import com.splitscale.reems.core.hazard.environment.EnvironmentalHazardRequest;
+import com.splitscale.reems.core.repositories.EnvironmentalHazardRepository;
 
 import java.io.IOException;
 import java.sql.Connection;

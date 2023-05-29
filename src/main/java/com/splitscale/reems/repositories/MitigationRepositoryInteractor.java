@@ -1,7 +1,8 @@
 package com.splitscale.reems.repositories;
 
-import com.splitscale.reems.mitigation.Mitigation;
-import com.splitscale.reems.mitigation.MitigationRequest;
+import com.splitscale.reems.core.mitigation.Mitigation;
+import com.splitscale.reems.core.mitigation.MitigationRequest;
+import com.splitscale.reems.core.repositories.MitigationRepository;
 
 import java.io.IOException;
 import java.sql.Connection;

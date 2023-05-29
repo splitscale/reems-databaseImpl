@@ -9,8 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.splitscale.reems.driver.DatabaseDriver;
-import com.splitscale.reems.properties.Property;
-import com.splitscale.reems.properties.PropertyRequest;
+import com.splitscale.reems.core.properties.Property;
+import com.splitscale.reems.core.properties.PropertyRequest;
+import com.splitscale.reems.core.repositories.PropertyRepository;
 
 public class PropertyRepositoryInteractor implements PropertyRepository {
   private DatabaseDriver db;

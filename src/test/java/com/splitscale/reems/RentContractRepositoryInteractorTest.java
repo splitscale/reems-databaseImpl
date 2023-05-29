@@ -1,8 +1,8 @@
 package com.splitscale.reems;
 
 import com.splitscale.reems.driver.DatabaseDriver;
-import com.splitscale.reems.rentContract.RentContract;
-import com.splitscale.reems.rentContract.RentContractRequest;
+import com.splitscale.reems.core.rentContract.RentContract;
+import com.splitscale.reems.core.rentContract.RentContractRequest;
 import com.splitscale.reems.repositories.RentContractRepositoryInteractor;
 
 import org.junit.jupiter.api.BeforeEach;

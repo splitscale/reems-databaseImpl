@@ -1,8 +1,8 @@
 package com.splitscale.reems;
 
 import com.splitscale.reems.driver.DatabaseDriver;
-import com.splitscale.reems.hazard.environment.EnvironmentalHazard;
-import com.splitscale.reems.hazard.environment.EnvironmentalHazardRequest;
+import com.splitscale.reems.core.hazard.environment.EnvironmentalHazard;
+import com.splitscale.reems.core.hazard.environment.EnvironmentalHazardRequest;
 import com.splitscale.reems.repositories.EnvironmentalHazardRepositoryInteractor;
 
 import org.junit.jupiter.api.BeforeEach;

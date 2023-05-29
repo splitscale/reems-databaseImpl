@@ -10,8 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.splitscale.reems.driver.DatabaseDriver;
-import com.splitscale.reems.expenses.Expense;
-import com.splitscale.reems.expenses.ExpenseRequest;
+import com.splitscale.reems.core.expenses.Expense;
+import com.splitscale.reems.core.expenses.ExpenseRequest;
+import com.splitscale.reems.core.repositories.ExpenseRepository;
 
 public class ExpenseRepositoryInteractor implements ExpenseRepository {
   private DatabaseDriver db;

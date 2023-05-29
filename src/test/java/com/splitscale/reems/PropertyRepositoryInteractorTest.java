@@ -1,8 +1,8 @@
 package com.splitscale.reems;
 
 import com.splitscale.reems.driver.DatabaseDriver;
-import com.splitscale.reems.properties.Property;
-import com.splitscale.reems.properties.PropertyRequest;
+import com.splitscale.reems.core.properties.Property;
+import com.splitscale.reems.core.properties.PropertyRequest;
 import com.splitscale.reems.repositories.PropertyRepositoryInteractor;
 
 import org.junit.jupiter.api.BeforeEach;

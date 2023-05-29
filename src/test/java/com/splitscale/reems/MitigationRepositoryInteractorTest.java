@@ -1,7 +1,7 @@
 package com.splitscale.reems;
 
-import com.splitscale.reems.mitigation.Mitigation;
-import com.splitscale.reems.mitigation.MitigationRequest;
+import com.splitscale.reems.core.mitigation.Mitigation;
+import com.splitscale.reems.core.mitigation.MitigationRequest;
 import com.splitscale.reems.repositories.MitigationRepositoryInteractor;
 import com.splitscale.reems.driver.DatabaseDriver;
 

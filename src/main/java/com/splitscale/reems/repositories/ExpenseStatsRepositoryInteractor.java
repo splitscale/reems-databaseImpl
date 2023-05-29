@@ -3,8 +3,8 @@ package com.splitscale.reems.repositories;
 import java.io.IOException;
 import java.util.List;
 
-import com.splitscale.reems.expenseStats.ExpenseStats;
-import com.splitscale.reems.expenseStats.ExpenseStatsRequest;
+import com.splitscale.reems.core.expenseStats.ExpenseStats;
+import com.splitscale.reems.core.expenseStats.ExpenseStatsRequest;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.splitscale.reems.core.repositories.ExpenseStatsRepository;
 import com.splitscale.reems.driver.DatabaseDriver;
 
 public class ExpenseStatsRepositoryInteractor implements ExpenseStatsRepository {

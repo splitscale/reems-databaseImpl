@@ -1,8 +1,9 @@
 package com.splitscale.reems.repositories;
 
 import com.splitscale.reems.driver.DatabaseDriver;
-import com.splitscale.reems.energyStats.EnergyStats;
-import com.splitscale.reems.energyStats.EnergyStatsRequest;
+import com.splitscale.reems.core.energyStats.EnergyStats;
+import com.splitscale.reems.core.energyStats.EnergyStatsRequest;
+import com.splitscale.reems.core.repositories.EnergyStatsRepository;
 
 import java.io.IOException;
 import java.sql.Connection;

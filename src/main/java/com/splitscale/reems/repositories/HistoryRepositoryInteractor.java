@@ -1,7 +1,8 @@
 package com.splitscale.reems.repositories;
 
-import com.splitscale.reems.history.History;
-import com.splitscale.reems.history.HistoryRequest;
+import com.splitscale.reems.core.history.History;
+import com.splitscale.reems.core.history.HistoryRequest;
+import com.splitscale.reems.core.repositories.HistoryRepository;
 
 import java.io.IOException;
 import java.sql.Connection;

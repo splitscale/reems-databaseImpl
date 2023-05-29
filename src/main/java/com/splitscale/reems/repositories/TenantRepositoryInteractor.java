@@ -1,7 +1,8 @@
 package com.splitscale.reems.repositories;
 
-import com.splitscale.reems.tenantinfo.TenantInfo;
-import com.splitscale.reems.tenantinfo.TenantInfoRequest;
+import com.splitscale.reems.core.repositories.TenantRepository;
+import com.splitscale.reems.core.tenantinfo.TenantInfo;
+import com.splitscale.reems.core.tenantinfo.TenantInfoRequest;
 
 import java.io.IOException;
 import java.sql.Connection;
