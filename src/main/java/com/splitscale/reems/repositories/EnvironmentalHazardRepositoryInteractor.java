@@ -54,7 +54,7 @@ public class EnvironmentalHazardRepositoryInteractor implements EnvironmentalHaz
   @Override
   public void delete(String id) throws IOException {
     try (Connection connection = db.getConnection();
-         PreparedStatement statement = connection.prepareStatement("DELETE FROM EnvironmentalHazard WHERE id = ?")) {
+        PreparedStatement statement = connection.prepareStatement("DELETE FROM EnvironmentalHazard WHERE id = ?")) {
 
       statement.setString(1, id);
       statement.executeUpdate();
@@ -85,7 +85,7 @@ public class EnvironmentalHazardRepositoryInteractor implements EnvironmentalHaz
         String riskLevel = rs.getString("riskLevel");
 
         EnvironmentalHazard environmentalHazard = new EnvironmentalHazard(id, propertyId, created, modified,
-                category, title, description, riskLevel);
+            category, title, description, riskLevel);
         environmentalHazardList.add(environmentalHazard);
       }
 
