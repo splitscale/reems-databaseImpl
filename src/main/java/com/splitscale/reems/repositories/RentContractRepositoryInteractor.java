@@ -115,15 +115,15 @@ public class RentContractRepositoryInteractor implements RentContractRepository 
     }
   }
 
-  public void update(RentContractRequest rentContractRequest) throws IOException {
+  public void update(RentContract rentContract) throws IOException {
     String query = "UPDATE RentContract SET tenant_info_id = ?, property_id = ? WHERE id = ?;";
 
     try {
       Connection conn = db.getConnection();
       PreparedStatement pstmt = conn.prepareStatement(query);
-      pstmt.setString(1, rentContractRequest.getTenantInfoId());
-      pstmt.setString(2, rentContractRequest.getPropertyId());
-      pstmt.setString(3, rentContractRequest.getId());
+      pstmt.setString(1, rentContract.getTenantInfoId());
+      pstmt.setString(2, rentContract.getPropertyId());
+      pstmt.setString(3, rentContract.getId());
 
       pstmt.executeUpdate();
       conn.close();

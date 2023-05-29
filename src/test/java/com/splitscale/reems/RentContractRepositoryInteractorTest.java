@@ -132,19 +132,18 @@ public class RentContractRepositoryInteractorTest {
 
   @Test
   public void testUpdate() throws IOException, SQLException {
-    RentContractRequest rentContractRequest = new RentContractRequest("tenant_info_id", "property_id", null);
-    rentContractRequest.setId("1");
+    RentContract rentContract = new RentContract("1", "tenant_info_id", "property_id");
 
     when(db.getConnection()).thenReturn(conn);
     when(conn.prepareStatement(anyString())).thenReturn(pstmt);
     when(pstmt.executeUpdate()).thenReturn(1);
     doNothing().when(conn).close();
 
-    rentContractRepository.update(rentContractRequest);
+    rentContractRepository.update(rentContract);
 
-    verify(pstmt).setString(1, rentContractRequest.getTenantInfoId());
-    verify(pstmt).setString(2, rentContractRequest.getPropertyId());
-    verify(pstmt).setString(3, rentContractRequest.getId());
+    verify(pstmt).setString(1, rentContract.getTenantInfoId());
+    verify(pstmt).setString(2, rentContract.getPropertyId());
+    verify(pstmt).setString(3, rentContract.getId());
     verify(pstmt).executeUpdate();
     verify(conn).close();
   }
