@@ -6,7 +6,7 @@
 
   <groupId>com.splitscale.reems</groupId>
   <artifactId>reems-databaseImpl</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
 
   <name>reems-databaseImpl</name>
   <!-- FIXME change it to the project's website -->
@@ -55,6 +55,7 @@
       <artifactId>core</artifactId>
       <version>1.0</version>
     </dependency>
+
 
     <dependency>
       <groupId>com.mysql</groupId>
